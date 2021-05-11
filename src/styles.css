@@ -1,3 +1,12 @@
 body {
-    background-color: #efefef;
+    background: #343a40;
+    color: white;
+}
+
+.nav-link {
+    color: white;
+}
+
+.roundeds{
+    border-radius: 50%;
 }
