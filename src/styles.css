@@ -10,3 +10,7 @@ body {
 .roundeds{
     border-radius: 50%;
 }
+
+.x {
+    margin: 1px auto;
+}
