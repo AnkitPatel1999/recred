@@ -79,7 +79,7 @@ const Products = () => {
         { getRedirect(redirect) }
         {Product.map((product, index)=> (
             <div className="col-4 mt-2">
-                <div className="card text-white bg-dark border border-info">
+                <div className="card text-center text-white bg-dark border border-info">
                     <div className="card-header lead">{product.cardTitles}</div>
                         <div className="card-body">
                             <div className="rounded border border-success p-2">

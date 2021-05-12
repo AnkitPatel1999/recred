@@ -14,3 +14,21 @@ body {
 .x {
     margin: 1px auto;
 }
+
+.cardx{
+    place-content: center;
+    width: 193px;
+    border: 1px solid white;
+    align-items: center;
+    display: flex;
+    margin-top: 10px;
+}
+
+.cardx img {
+    width:18%;
+    height:14%;
+}
+.cardx p{
+    margin-top: 10px;
+    margin-left: 5px;
+}

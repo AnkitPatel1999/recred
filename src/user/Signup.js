@@ -2,6 +2,7 @@ import React,{ useState, useEffect } from 'react'
 import '../styles.css'
 import { Link } from 'react-router-dom';
 import Products from '../user/Products'
+import LoginwithFB from '../user/LoginwithFB'
 
 const Signup = () => {
 
@@ -14,6 +15,7 @@ const Signup = () => {
 
     const [userValue, setUserValue] = useState(false)
 
+    const [x,setX] = useState();
 
     const insertGapiScript = () =>{
         const script = document.createElement('script')
@@ -51,7 +53,17 @@ const Signup = () => {
         })
     }
 
+
+
     useEffect(() => {
+        if(typeof window !== undefined) {
+            if(localStorage.getItem("fblst_1889385564576151")) {
+                //setUserValue(true)
+            }
+            
+        }
+
+
         console.log('loading',userValue);
         insertGapiScript();
        
@@ -108,6 +120,15 @@ const Signup = () => {
         )
     }
 
+    const handleLanguage = (langValue) => {
+        setX(langValue);
+        setValues({name: langValue.first_name, email: langValue.email, pic: langValue.picture.data.url})
+        setUserValue(true)
+        
+        console.log(langValue.first_name, langValue.email, langValue.picture.data.url);
+        console.log("Xxxxxxxxxxxxxxxxxxxx=  ",langValue);
+    }
+
     return (
         <div>
             {navBar()}
@@ -116,6 +137,7 @@ const Signup = () => {
                     <div className="col-5"></div>
                     <div className="col-2">
                         <div id="loginButton"> </div>
+                        <LoginwithFB onSelectLanguage={handleLanguage} setUserValue={true}/>
                     </div>
                     <div className="col-5"></div>
                 </div>
@@ -124,9 +146,7 @@ const Signup = () => {
                 <div>
                     <Products />
                 </div>
-            )}
-            
-
+            )}            
         </div>
     )
 }
